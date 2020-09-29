@@ -6,6 +6,9 @@ import { getUrlParam } from './utils'
 
 function App() {
   var file = getUrlParam('file');
+  if (file && file.indexOf('http') < 0) {
+    file = `${window.location.origin}/hjmarket/hd/pdf/file/${file}`;
+  }
   return (
     <div className="App">
       {file ?

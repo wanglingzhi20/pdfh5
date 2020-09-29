@@ -1,6 +1,7 @@
 {
   "name": "react-test",
   "version": "0.1.0",
+  "homepage":"/hjmarket/hd/pdf/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
