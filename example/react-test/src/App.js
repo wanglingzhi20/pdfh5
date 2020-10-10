@@ -8,16 +8,20 @@ function App() {
   var file = getUrlParam('file');
   if (file && file.indexOf('http') < 0) {
     file = `${window.location.origin}/hjmarket/hd/pdf/file/${file}`;
-    if (file.indexOf('njJgxRisk.pdf') > 0) {
+  }
+
+  try {
+    if (file.indexOf('njJgxRisk.pdf') >= 0) {
       document.title = '南京银行个人结构性存款风险揭示书'
-    } else if (file.indexOf('njJgxTcp.pdf') > 0) {
+    } else if (file.indexOf('njJgxTcp.pdf') >= 0) {
       document.title = '南京银行个人结构性存款业务协议书'
     } else {
       document.title = '南京银行'
     }
-  } else {
-    document.title = '南京银行'
+  } catch (error) {
+    console.error(error)
   }
+
   return (
     <div className="App">
       {file ?
